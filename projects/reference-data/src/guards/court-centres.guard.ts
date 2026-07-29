@@ -8,7 +8,7 @@ import { getOrganisationUnits, ReferenceDataState } from '../reducers/index';
 import { ReferenceDataService } from '../services/reference-data.service';
 
 /**
- * @deprecated Use {@link createCourtCentreUnitsGuard} from `court-centre-units.gard` instead.
+ * @deprecated Use {@link getAllCourtCentreUnitsGuard} from `get-all-court-centre-units.guard` instead.
  */
 @Injectable()
 export class OrganisationUnitsGuard {
