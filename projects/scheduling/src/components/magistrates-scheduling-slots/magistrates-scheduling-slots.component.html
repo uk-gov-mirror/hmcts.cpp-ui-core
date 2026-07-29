@@ -13,6 +13,7 @@
         [rotaBusinessTypesByCode]="rotaBusinessTypesByCode"
         [selectedHearingSlotTimestamps]="selectedHearingSlotTimestamps"
         (selectedHearingSlotTimestamp)="handleHearingSlotTimeChanged($event)"
+        (errors)="errors.emit($event)"
       />
     </pdk-radio-group>
     } @case ('multi') {
@@ -27,12 +28,14 @@
         [rotaBusinessTypesByCode]="rotaBusinessTypesByCode"
         [selectedHearingSlotTimestamps]="selectedHearingSlotTimestamps"
         (selectedHearingSlotTimestamp)="handleHearingSlotTimeChanged($event)"
+        (errors)="errors.emit($event)"
       />
     </pdk-checkbox-group>
     } @default {
     <hearing-slots-table
       [hearingSlots]="hearingSlots"
       [rotaBusinessTypesByCode]="rotaBusinessTypesByCode"
+      (errors)="errors.emit($event)"
     />
     } } @if (totalResults > pageSize) {
     <pdk-pagination
