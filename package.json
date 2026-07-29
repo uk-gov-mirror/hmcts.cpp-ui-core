@@ -1,6 +1,6 @@
 {
   "name": "cpp.ui.core",
-  "version": "19.0.5",
+  "version": "19.0.5-CHD-2454.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/hmcts/cpp-ui-core"
