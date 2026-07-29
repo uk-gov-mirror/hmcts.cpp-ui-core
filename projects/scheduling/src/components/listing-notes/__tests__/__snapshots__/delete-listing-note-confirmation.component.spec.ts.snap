@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteListingNoteConfirmationComponent should render the component 1`] = `
+<delete-listing-note-confirmation
+  onCancel={[Function EventEmitter_]}
+  onDelete={[Function EventEmitter_]}
+>
+  <div>
+    <p
+      class="bold govuk-!-margin-bottom-0 govuk-!-margin-top-0"
+      pdk-margin-bottom="0"
+      pdk-margin-top="0"
+    >
+      Listing note:
+    </p>
+    <span
+      class="listnote-wrap"
+    >
+    </span>
+    <p
+      class="bold"
+    >
+      Do you want to delete this listing note?
+    </p>
+    <div
+      class="delete-actions"
+    >
+      <button
+        class="govuk-!-margin-bottom-0 govuk-button govuk-button--warning"
+        pdk-button="warning"
+        pdk-margin-bottom="0"
+        type="button"
+      >
+         Yes, delete 
+      </button>
+      <a
+        class="govuk-!-margin-left-4 govuk-!-margin-bottom-0 govuk-link govuk-link--no-visited-state"
+        href="javascript:void(0);"
+        pdk-link=""
+        pdk-margin-bottom="0"
+        pdk-margin-left="4"
+        unvisited=""
+      >
+         Cancel 
+      </a>
+    </div>
+  </div>
+</delete-listing-note-confirmation>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CppHasFeatureEnabledDirective Given *cppHasFeatureEnabled is used should not render the expected component is the feature is not found 1`] = `
+<cpp-user-has-feature-enabled-test>
+</cpp-user-has-feature-enabled-test>
+`;
+
+exports[`CppHasFeatureEnabledDirective Given *cppHasFeatureEnabled is used should render the alternative template if the feature is not found 1`] = `
+<cpp-user-has-feature-enabled-test>
+  <div>
+    User does not have this feature enabled.
+  </div>
+</cpp-user-has-feature-enabled-test>
+`;
+
+exports[`CppHasFeatureEnabledDirective Given *cppHasFeatureEnabled is used should render the expected component is the feature is found 1`] = `
+<cpp-user-has-feature-enabled-test>
+  <div>
+     This is displayed only if the feature is enabled 
+  </div>
+</cpp-user-has-feature-enabled-test>
+`;
+
+exports[`CppHasFeatureEnabledDirective should render 1`] = `
+<cpp-user-has-feature-enabled-test>
+  <div>
+    This is displayed always.
+  </div>
+</cpp-user-has-feature-enabled-test>
+`;

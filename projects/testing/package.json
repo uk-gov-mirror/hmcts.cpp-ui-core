@@ -1,0 +1,11 @@
+{
+  "name": "@cpp/testing",
+  "version": "0.0.0-PLACEHOLDER",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "request": "^2.88.0",
+    "tslib": "^2.0.0",
+    "uuid": "^3.3.2"
+  }
+}

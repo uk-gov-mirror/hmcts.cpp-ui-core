@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`scheduling reducer undefined action should return the default state 1`] = `
+{
+  "allocation": {
+    "hearingSlots": [],
+    "params": null,
+    "totalResults": -1,
+  },
+  "listingNotes": {
+    "notes": [],
+    "publishStatusMessage": undefined,
+  },
+}
+`;

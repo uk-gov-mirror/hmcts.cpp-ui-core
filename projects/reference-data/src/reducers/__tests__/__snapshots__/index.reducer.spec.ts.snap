@@ -1,0 +1,590 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`referenceDataReducer CPS Areas ReferenceDataActions.loadCPSAreas should install the cps areas key 1`] = `
+{
+  "cpsAreas": null,
+}
+`;
+
+exports[`referenceDataReducer CPS Areas ReferenceDataActions.loadCPSAreas should not overwrite any existing cpsAreas 1`] = `
+{
+  "cpsAreas": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer CPS Areas ReferenceDataActions.loadCPSAreasError should remove the cps areas key 1`] = `{}`;
+
+exports[`referenceDataReducer CPS Areas ReferenceDataActions.loadCPSAreasSuccess should add the cps areas to the state 1`] = `
+{
+  "cpsAreas": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer CPS Business Units ReferenceDataActions.loadCPSBusinessUnits should install the cps business units key 1`] = `
+{
+  "cPSBusinessUnits": null,
+}
+`;
+
+exports[`referenceDataReducer CPS Business Units ReferenceDataActions.loadCPSBusinessUnits should not overwrite any existing cpsBusinessUnits 1`] = `
+{
+  "cPSBusinessUnits": [
+    {
+      "id": "*",
+    },
+  ],
+  "cpsBusinessUnits": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer CPS Business Units ReferenceDataActions.loadCPSBusinessUnitsError should remove the cps business units key 1`] = `{}`;
+
+exports[`referenceDataReducer CPS Business Units ReferenceDataActions.loadCPSBusinessUnitsSuccess should add the cps business units to the state 1`] = `
+{
+  "cpsBusinessUnits": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer CPSCase Statuses ReferenceDataActions.loadCPSCaseStatuses should install the case statuses key 1`] = `
+{
+  "cpsCaseStatuses": null,
+}
+`;
+
+exports[`referenceDataReducer CPSCase Statuses ReferenceDataActions.loadCPSCaseStatuses should not overwrite any existing cpsCaseStatuses 1`] = `
+{
+  "cpsCaseStatuses": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer CPSCase Statuses ReferenceDataActions.loadCPSCaseStatusesError should remove the cps case statuses key 1`] = `{}`;
+
+exports[`referenceDataReducer CPSCase Statuses ReferenceDataActions.loadCPSCaseStatusesSuccess should add the cps case statuses to the state 1`] = `
+{
+  "cpsCaseStatuses": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer Clusters HearingResultsActions.loadClustersError should remove the clusters key 1`] = `{}`;
+
+exports[`referenceDataReducer Clusters ReferenceDataActions.loadClusters should install the clusters key 1`] = `
+{
+  "clusters": null,
+}
+`;
+
+exports[`referenceDataReducer Clusters ReferenceDataActions.loadClusters should not overwrite any existing clusters 1`] = `
+{
+  "clusters": [
+    {
+      "clusterCode": "code",
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer Clusters ReferenceDataActions.loadClustersSuccess should add the clusters to the state 1`] = `
+{
+  "clusters": [
+    {
+      "clusterCode": "code",
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer Local Justice Areas HearingResultsActions.loadLocalJusticeAreasError should remove the localJusticeAreas key 1`] = `{}`;
+
+exports[`referenceDataReducer Local Justice Areas HearingResultsActions.loadLocalJusticeAreasSuccess should add the localJusticeAreas to the state 1`] = `
+{
+  "localJusticeAreas": [
+    {
+      "clusterCode": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer Local Justice Areas ReferenceDataActions.loadLocalJusticeAreas should install the localJusticeAreas 1`] = `
+{
+  "localJusticeAreas": null,
+}
+`;
+
+exports[`referenceDataReducer Local Justice Areas ReferenceDataActions.loadLocalJusticeAreas should not overwrite any existing localJusticeAreas 1`] = `
+{
+  "localJusticeAreas": [
+    {
+      "clusterCode": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer application types HearingResultsActions.loadApplicationTypesError should remove the application types key 1`] = `{}`;
+
+exports[`referenceDataReducer application types HearingResultsActions.loadApplicationTypesSuccess should add the application types to the state 1`] = `
+{
+  "applicationTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer application types ReferenceDataActions.loadApplicationTypes should install the application types key 1`] = `
+{
+  "applicationTypes": null,
+}
+`;
+
+exports[`referenceDataReducer application types ReferenceDataActions.loadApplicationTypes should not overwrite any existing application types 1`] = `
+{
+  "applicationTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer assign priorities HearingResultsActions.loadAssignPrioritiesError should remove the assign priorities key 1`] = `
+{
+  "applicationTypes": null,
+}
+`;
+
+exports[`referenceDataReducer assign priorities ReferenceDataActions.loadAssignPriorities should install the assign priorities key 1`] = `
+{
+  "assignPriorities": null,
+}
+`;
+
+exports[`referenceDataReducer assign priorities ReferenceDataActions.loadAssignPriorities should not overwrite any existing assign priorities 1`] = `
+{
+  "assignPriorities": [
+    {
+      "id": "someid",
+      "priorityCode": "H",
+      "priorityValue": "High",
+      "seqNum": 1,
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer assign priorities ReferenceDataActions.loadAssignPrioritiesSuccess should add the assign priorities to the state 1`] = `
+{
+  "assignPriorities": [
+    {
+      "id": "someid",
+      "priorityCode": "H",
+      "priorityValue": "High",
+      "seqNum": 1,
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer booking types HearingResultsActions.loadBookingTypesError should remove the booking types key 1`] = `
+{
+  "applicationTypes": null,
+}
+`;
+
+exports[`referenceDataReducer booking types ReferenceDataActions.loadBookingTypes should install the booking types key 1`] = `
+{
+  "bookingTypes": null,
+}
+`;
+
+exports[`referenceDataReducer booking types ReferenceDataActions.loadBookingTypes should not overwrite any existing booking types 1`] = `
+{
+  "bookingTypes": [
+    {
+      "id": "someId",
+      "typeCode": "VL",
+      "typeValue": "Video Link",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer booking types ReferenceDataActions.loadBookingTypesSuccess should add the booking types to the state 1`] = `
+{
+  "bookingTypes": [
+    {
+      "id": "someId",
+      "typeCode": "VL",
+      "typeValue": "Video Link",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer court centres HearingResultsActions.loadOrganisationUnitsError should remove the court centres key 1`] = `{}`;
+
+exports[`referenceDataReducer court centres HearingResultsActions.loadOrganisationUnitsSuccess should add the court centres to the state 1`] = `
+{
+  "organisationUnits": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer court centres ReferenceDataActions.loadOrganisationUnits should install the court centres key 1`] = `
+{
+  "organisationUnits": null,
+}
+`;
+
+exports[`referenceDataReducer court centres ReferenceDataActions.loadOrganisationUnits should not overwrite any existing court centres 1`] = `
+{
+  "organisationUnits": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer fixed lists HearingResultsActions.loadFixedListsError should remove the fixed lists key 1`] = `
+{
+  "applicationTypes": null,
+}
+`;
+
+exports[`referenceDataReducer fixed lists HearingResultsActions.loadFixedListsSuccess should add the fixed lists to the state 1`] = `
+{
+  "fixedLists": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer fixed lists ReferenceDataActions.loadFixedLists should install the fixed lists key 1`] = `
+{
+  "fixedLists": null,
+}
+`;
+
+exports[`referenceDataReducer fixed lists ReferenceDataActions.loadFixedLists should not overwrite any existing fixed lists 1`] = `
+{
+  "applicationTypes": [
+    {
+      "id": "*",
+    },
+  ],
+  "fixedLists": null,
+}
+`;
+
+exports[`referenceDataReducer hearing types HearingResultsActions.loadHearingTypesError should remove the hearing types key 1`] = `{}`;
+
+exports[`referenceDataReducer hearing types HearingResultsActions.loadHearingTypesSuccess should add the hearing types to the state 1`] = `
+{
+  "hearingTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer hearing types ReferenceDataActions.loadHearingTypes should install the hearing types key 1`] = `
+{
+  "hearingTypes": null,
+}
+`;
+
+exports[`referenceDataReducer hearing types ReferenceDataActions.loadHearingTypes should not overwrite any existing hearing types 1`] = `
+{
+  "hearingTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer judiciary group types ReferenceDataActions.loadJudiciaryGroupTypes should install the judiciary group types key 1`] = `
+{
+  "judiciaryGroupTypes": null,
+}
+`;
+
+exports[`referenceDataReducer judiciary group types ReferenceDataActions.loadJudiciaryGroupTypes should not overwrite any existing judiciary group types types 1`] = `
+{
+  "judiciaryGroupTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer judiciary group types ReferenceDataActions.loadJudiciaryGroupTypesError should remove a pending judiciary group types types key 1`] = `{}`;
+
+exports[`referenceDataReducer judiciary group types ReferenceDataActions.loadJudiciaryGroupTypesSuccess should add the judiciary group types types to the state 1`] = `
+{
+  "judiciaryGroupTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer plea types HearingResultsActions.loadPleaTypesError should remove a pending plea types key 1`] = `{}`;
+
+exports[`referenceDataReducer plea types HearingResultsActions.loadPleaTypesSuccess should add the plea types to the state 1`] = `
+{
+  "pleaStatusTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer plea types ReferenceDataActions.loadPleaTypes should install the plea types key 1`] = `
+{
+  "pleaStatusTypes": null,
+}
+`;
+
+exports[`referenceDataReducer plea types ReferenceDataActions.loadPleaTypes should not overwrite any existing plea types 1`] = `
+{
+  "pleaStatusTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer policeForceList ReferenceDataActions.loadPoliceForceList should install the police force list 1`] = `
+{
+  "policeForceList": null,
+}
+`;
+
+exports[`referenceDataReducer policeForceList ReferenceDataActions.loadPoliceForceList should not overwrite any existing police force list 1`] = `
+{
+  "policeForceList": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer policeForceList ReferenceDataActions.loadPoliceForceListError should remove the policeForceList key 1`] = `{}`;
+
+exports[`referenceDataReducer policeForceList ReferenceDataActions.loadPoliceForceListSuccess should add the policeForceList to the state 1`] = `
+{
+  "policeForceList": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer prosecutors HearingResultsActions.loadProsecutorsError should remove the prosecutors key 1`] = `{}`;
+
+exports[`referenceDataReducer prosecutors HearingResultsActions.loadProsecutorsSuccess should add the prosecutors to the state 1`] = `
+{
+  "prosecutors": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer prosecutors ReferenceDataActions.loadProsecutors should install the prosecutors 1`] = `
+{
+  "prosecutors": null,
+}
+`;
+
+exports[`referenceDataReducer prosecutors ReferenceDataActions.loadProsecutors should not overwrite any existing prosecutors 1`] = `
+{
+  "prosecutors": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer rota business types HearingResultsActions.loadRotaBusinessTypesError should remove a pending rota business types key 1`] = `{}`;
+
+exports[`referenceDataReducer rota business types HearingResultsActions.loadRotaBusinessTypesSuccess should add the rota business types to the state 1`] = `
+{
+  "rotaBusinessTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer rota business types ReferenceDataActions.loadRotaBusinessTypes should install the prosecutors 1`] = `
+{
+  "rotaBusinessTypes": null,
+}
+`;
+
+exports[`referenceDataReducer rota business types ReferenceDataActions.loadRotaBusinessTypes should not overwrite any existing rota business types 1`] = `
+{
+  "rotaBusinessTypes": [
+    {
+      "id": "*",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer selectors Judiciary Group Types getJudiciaryGroupTypes should select an empty array when no judiciary group types 1`] = `undefined`;
+
+exports[`referenceDataReducer selectors Judiciary Group Types getJudiciaryGroupTypes should select judiciary group types 1`] = `
+[
+  {
+    "id": "*",
+  },
+]
+`;
+
+exports[`referenceDataReducer selectors Plea Types getPleaTypes should select an empty array when no plea types exist 1`] = `[]`;
+
+exports[`referenceDataReducer selectors Plea Types getPleaTypes should select the plea types 1`] = `
+[
+  {
+    "id": "*",
+  },
+]
+`;
+
+exports[`referenceDataReducer selectors Trial Types getTrialTypes should select an empty array when no trial types exist 1`] = `[]`;
+
+exports[`referenceDataReducer selectors Trial Types getTrialTypes should select the trial types 1`] = `
+[
+  {
+    "id": "*",
+  },
+]
+`;
+
+exports[`referenceDataReducer selectors Witness care units getWitnessCareUnits should select an empty array when no witness care units 1`] = `undefined`;
+
+exports[`referenceDataReducer selectors Witness care units getWitnessCareUnits should select witness care units 1`] = `
+[
+  {
+    "id": "*",
+  },
+]
+`;
+
+exports[`referenceDataReducer selectors application types getApplicationTypes should select the application types 1`] = `
+[
+  {
+    "id": "*",
+  },
+]
+`;
+
+exports[`referenceDataReducer selectors court centres getOrganisationUnits should select the court centres 1`] = `
+[
+  {
+    "id": "*",
+  },
+]
+`;
+
+exports[`referenceDataReducer selectors hearing types getHearingTypes should select the hearing types 1`] = `
+[
+  {
+    "id": "*",
+  },
+]
+`;
+
+exports[`referenceDataReducer selectors prosecutors getProsecutors should select the prosecutors 1`] = `
+[
+  {
+    "id": "*",
+  },
+]
+`;
+
+exports[`referenceDataReducer selectors special requirements HearingResultsActions.loadSpecialRequirementsError should remove the special requirements key 1`] = `
+{
+  "applicationTypes": null,
+}
+`;
+
+exports[`referenceDataReducer selectors special requirements ReferenceDataActions.loadBookingTypesSuccess should add the special requirements to the state 1`] = `
+{
+  "specialRequirements": [
+    {
+      "id": "someId",
+      "requirementCode": "AOC",
+      "requirementValue": "Availability of a Cell",
+    },
+  ],
+}
+`;
+
+exports[`referenceDataReducer selectors special requirements ReferenceDataActions.loadSpecialRequirements should install the special requirements key 1`] = `
+{
+  "specialRequirements": null,
+}
+`;
+
+exports[`referenceDataReducer selectors special requirements ReferenceDataActions.loadSpecialRequirements should not overwrite any special requirements types 1`] = `
+{
+  "bookingTypes": [
+    {
+      "id": "someId",
+      "typeCode": "VL",
+      "typeValue": "Video Link",
+    },
+  ],
+  "specialRequirements": null,
+}
+`;
+
+exports[`referenceDataReducer undefined action should return the default state 1`] = `{}`;

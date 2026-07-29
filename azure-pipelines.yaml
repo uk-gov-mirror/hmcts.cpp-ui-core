@@ -1,15 +1,26 @@
-name: CPP Context Verify & Validation
+name: UI Verify & Validation
 
-# Need to update this for actual migration
 trigger: none
 
 pr:
-  - '*'
+  - main
+  - 'team/*'
 
 parameters:
-  - name: RUN_RELEASE
-    type: boolean
-    default: false
+  - name: SEMVER_VERSION_INCREMENT
+    default: 'manual'
+    values:
+      - patch
+      - minor
+      - major
+      - prepatch
+      - preminor
+      - premajor
+      - prerelease
+      - from-git
+      - manual
+  - name: SEMVER_VERSION_MANUAL
+    default: null
 
 resources:
   repositories:
@@ -17,23 +28,33 @@ resources:
       type: github
       name: hmcts/cpp-azure-devops-templates
       endpoint: 'hmcts'
-      ref: 'main'
+      ref: 'ui-test-upd'
 
 pool:
-  name: "MDV-ADO-AGENT-AKS-01"
-  demands:
-    - identifier -equals centos8-j17
+  name: 'MDV-ADO-AGENTS-01'
 
 variables:
-  sonarqubeProject: "uk.gov.moj.cpp.common:common-bom"
+  - name: NODE_VERSION
+    value: '18.20.x'
+  - name: NPM_VERSION
+    value: '10.7.0'
+  - name: sonarqubeProject
+    value: 'uk.gov.justice.cpp.ui:ui-core'
 
 stages:
   - ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
-      - template: pipelines/platform-verify.yaml@cppAzureDevOpsTemplates
+      - template: pipelines/ui-library-verify.yaml@cppAzureDevOpsTemplates
+        parameters:
+          repo: '$(Build.Repository.Name)'
+          NODE_VERSION: '${{ variables.NODE_VERSION }}'
+          NPM_VERSION: '${{ variables.NPM_VERSION }}'
+          sonarqube_project: ${{ variables['sonarqubeProject'] }}
 
   - ${{ if eq(variables['Build.Reason'], 'Manual') }}:
-      - template: pipelines/library-validation.yaml@cppAzureDevOpsTemplates
+      - template: pipelines/ui-library-validation.yaml@cppAzureDevOpsTemplates
         parameters:
-          serviceName: 'commonbom'
-          RUN_RELEASE: ${{ parameters.RUN_RELEASE }}
-          JOB_TYPE: 'library'
+          repo: '$(Build.Repository.Name)'
+          SEMVER_VERSION_INCREMENT: '${{ parameters.SEMVER_VERSION_INCREMENT }}'
+          SEMVER_VERSION_MANUAL: '${{ parameters.SEMVER_VERSION_MANUAL }}'
+          NODE_VERSION: '${{ variables.NODE_VERSION }}'
+          NPM_VERSION: '${{ variables.NPM_VERSION }}'

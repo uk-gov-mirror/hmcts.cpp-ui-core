@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "esModuleInterop": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "strict": true,
+    "target": "ES2020",
+    "typeRoots": ["node_modules/@types", "types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@cpp/core": ["./projects/core/src"],
+      "@cpp/reference-data": ["./projects/reference-data/src"],
+      "@cpp/users-groups": ["./projects/users-groups/src"],
+      "@cpp/scheduling": ["./projects/scheduling/src"]
+    },
+    "useDefineForClassFields": false
+  }
+}

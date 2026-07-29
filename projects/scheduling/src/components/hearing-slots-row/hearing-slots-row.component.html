@@ -1,0 +1,144 @@
+@let hearingSlotData = hearingSlot();
+
+<!-- Toggle -->
+@if (selectionMode !== 'readonly') {
+<td pdk-table-cell data-test-id="toggleSlot">
+  <ng-container *ngTemplateOutlet="toggleSlot"></ng-container>
+</td>
+}
+<!-- Session Date -->
+<td data-test-id="sessionDate" pdk-table-cell>
+  {{ hearingSlotData.sessionDate | date : 'dd-MM-yyyy' }}
+</td>
+<td pdk-table-cell colspan="4">
+  <table pdk-table>
+    <tr pdk-table-row>
+      <!-- Courthouse -->
+      <td class="width-180-px" pdk-padding-top="0" pdk-table-cell>
+        <span data-test-id="courtHouseName">{{ hearingSlotData.courtHouseName }}</span>
+        <br />
+        <span data-test-id="courtroomName" pdk-text-colour="dark-grey"
+          >{{ hearingSlotData.courtRoomName }}
+        </span>
+      </td>
+      <!-- Business Type -->
+      <td class="width-130-px" pdk-padding-top="0" data-test-id="businessType" pdk-table-cell>
+        <abbr>{{
+          hearingSlotData.businessType! | businessTypeDescription : rotaBusinessTypesByCode
+        }}</abbr>
+      </td>
+      <!-- Court Session -->
+      <td class="width-210-px" pdk-padding-top="0" data-test-id="courtSession" pdk-table-cell>
+        <ng-container *ngTemplateOutlet="courtSession"></ng-container>
+      </td>
+      <!-- Remaining Units -->
+      <td class="width-100-px" pdk-padding-top="0" data-test-id="units" pdk-table-cell>
+        <ng-container *ngTemplateOutlet="remainingUnits"></ng-container>
+      </td>
+    </tr>
+    @if (selectionMode !== 'readonly') {
+    <tr pdk-table-row>
+      <td colspan="4">
+        <listing-note-container
+          [courtRoomId]="hearingSlotData.courtRoomId"
+          [listingNoteDate]="hearingSlotData.sessionDate | date : 'yyyy-MM-dd'"
+          (onErrors)="errors.emit($event)"
+        >
+        </listing-note-container>
+      </td>
+    </tr>
+    }
+  </table>
+</td>
+<!-- Booked Units -->
+<td data-test-id="booked" pdk-table-cell>
+  <ng-container *ngTemplateOutlet="bookedTemplate"></ng-container>
+</td>
+
+<ng-template #toggleSlot>
+  @if (selectionMode === 'single') {
+  <pdk-radio-button [value]="hearingSlotData.courtScheduleId">
+    <span pdk-visually-hidden>Select hearing session</span>
+  </pdk-radio-button>
+  } @if (selectionMode === 'multi') {
+  <pdk-checkbox [value]="hearingSlotData.courtScheduleId">
+    <span pdk-visually-hidden>Select hearing session</span>
+  </pdk-checkbox>
+  }
+</ng-template>
+
+<ng-template #bookedTemplate>
+  <ol pdk-list pdk-margin-bottom="0">
+    @if (hearingSlotData.slotBased) { @for (option of getHearingSlotTimeOptions(hearingSlotData);
+    track option.label) {
+    <li>
+      {{ option.label }}: <b>{{ option.count }}</b>
+    </li>
+    } } @if (!hearingSlotData.slotBased && !hearingSlotData.allDaySplit) {
+    <li>{{ hearingSlotData.totalBooked! | durationPipe }}</li>
+    } @if (!hearingSlotData.slotBased && hearingSlotData.allDaySplit) {
+    <li>
+      <span class="bold">AM:</span>
+      <p pdk-margin-top="0" style="height: 50px">
+        {{ hearingSlotData.totalBookedForMorning! | durationPipe }}
+      </p>
+    </li>
+    <li>
+      <span class="bold">PM:</span>
+      <p pdk-margin-top="0" style="height: 50px">
+        {{ hearingSlotData.totalBookedForAfternoon! | durationPipe }}
+      </p>
+    </li>
+    }
+  </ol>
+</ng-template>
+
+<ng-template #remainingUnits>
+  <ol pdk-list pdk-margin-bottom="0">
+    @if (hearingSlotData.slotBased) {
+    <li>
+      {{ hearingSlotData.availableSlots! > 0 ? hearingSlotData.availableSlots : 0 }}
+    </li>
+    } @if (!hearingSlotData.slotBased && !hearingSlotData.allDaySplit) {
+    <li>{{ hearingSlotData.availableDuration! > 0 ? hearingSlotData.availableDuration : 0 }}</li>
+    } @if (hearingSlotData.allDaySplit) {
+    <li>
+      <span class="bold">AM:</span>
+      <p pdk-margin-top="0" style="height: 50px">
+        {{
+          hearingSlotData.availableDurationForMorning! > 0
+            ? (hearingSlotData.availableDurationForMorning! | durationPipe)
+            : 0
+        }}
+      </p>
+    </li>
+    <li>
+      <span class="bold">PM:</span>
+      <p pdk-margin-top="0" style="height: 50px">
+        {{
+          hearingSlotData.availableDurationForAfternoon! > 0
+            ? (hearingSlotData.availableDurationForAfternoon! | durationPipe)
+            : 0
+        }}
+      </p>
+    </li>
+    }
+  </ol>
+</ng-template>
+
+<ng-template #courtSession>
+  @if ( selectionMode !== 'readonly') {
+  <pdk-form-field label="Session time" labelType="none" pdk-margin="0">
+    <pdk-select
+      justified
+      [options]="getHearingSlotTimeOptions(hearingSlotData)"
+      [ngModel]="selectedTimestampModel()"
+      [ngModelOptions]="{ standalone: true }"
+      (ngModelChange)="handleHearingSlotTimeChanged(hearingSlotData, $event)"
+    >
+    </pdk-select>
+  </pdk-form-field>
+  } @else {
+  <span>{{ hearingSlotData.courtSession }}</span>
+  }
+</ng-template>

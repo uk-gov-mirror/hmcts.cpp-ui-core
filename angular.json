@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "core": {
+      "root": "projects/core",
+      "sourceRoot": "projects/core/src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "tsConfig": "projects/core/tsconfig.lib.json",
+            "project": "projects/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath": "./jest.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/core/**/*.ts", "projects/core/**/*.html"]
+          }
+        }
+      }
+    },
+    "reference-data": {
+      "root": "projects/reference-data",
+      "sourceRoot": "projects/reference-data/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "tsConfig": "projects/reference-data/tsconfig.lib.json",
+            "project": "projects/reference-data/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/reference-data/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath": "./jest.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/reference-data/**/*.ts",
+              "projects/reference-data/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "testing": {
+      "root": "projects/testing",
+      "sourceRoot": "projects/testing/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {}
+    },
+    "users-groups": {
+      "root": "projects/users-groups",
+      "sourceRoot": "projects/users-groups/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "tsConfig": "projects/users-groups/tsconfig.lib.json",
+            "project": "projects/users-groups/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/users-groups/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath": "./jest.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/users-groups/**/*.ts", "projects/users-groups/**/*.html"]
+          }
+        }
+      }
+    },
+    "scheduling": {
+      "projectType": "library",
+      "root": "projects/scheduling",
+      "sourceRoot": "projects/scheduling/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "tsConfig": "projects/scheduling/tsconfig.lib.json",
+            "project": "projects/scheduling/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/scheduling/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath": "./jest.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/scheduling/**/*.ts", "projects/scheduling/**/*.html"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "ad4e11a1-4cab-4779-9fdd-c62e01b6b2d7",
+    "schematicCollections": ["@angular-eslint/schematics"]
+  },
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
+  }
+}

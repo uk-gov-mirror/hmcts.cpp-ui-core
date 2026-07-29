@@ -1,0 +1,16 @@
+{
+  "name": "@cpp/scheduling",
+  "version": "0.0.0-PLACEHOLDER",
+  "peerDependencies": {
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@cpp/core": "^0.0.0-PLACEHOLDER",
+    "@cpp/pdk": "*",
+    "@cpp/reference-data": "^0.0.0-PLACEHOLDER"
+  },
+  "peerDepenciesComment": "Do not modify placeholders in this file",
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

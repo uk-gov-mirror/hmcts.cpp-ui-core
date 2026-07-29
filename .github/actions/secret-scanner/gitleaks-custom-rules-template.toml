@@ -1,0 +1,35 @@
+title = "Custom rules"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "internal-urls"
+description = "Identify internal urls"
+regex = '''${GITLEAKS_REGEX_INTERNAL_URL}'''
+tags = ["internal-urls"]
+
+[[rules]]
+id = "banned-ids"
+description = "Identify banned IDs"
+regex = '''${GITLEAKS_REGEX_BANNED_IDS}'''
+tags = ["banned-ids"]
+
+# ---------------------------------------------------------------------------
+# Reviewed and accepted values. Each entry is matched against a finding's
+# secret, so only these exact values are excluded - the rules above still
+# apply everywhere else.
+#   - "vnd.<service>.query.local" HTTP media types, which are content-type
+#     identifiers rather than hostnames (only the trailing ".local" matches)
+#   - user-id UUIDs used by the test fixtures under projects/testing
+# ---------------------------------------------------------------------------
+[allowlist]
+description = "Accepted values"
+regexes = [
+  '''^vnd\.[A-Za-z0-9.-]+\.local$''',
+  '''^d7c91866-646a-462c-9203-46678e8cddef$''',
+  '''^48a948dc-7d96-45bd-baa5-5237432152d2$''',
+  '''^ad0920bd-521a-4f40-b942-f82d258ea3cc$''',
+  '''^0e61972a-0a26-4de1-a676-36119c535a60$'''
+]
+

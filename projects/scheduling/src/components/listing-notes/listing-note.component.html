@@ -1,0 +1,100 @@
+<ng-container>
+  @if (displayCreateNoteLink) {
+  <div>
+    <a
+      data-test-id="create-note"
+      pdk-link
+      unvisited
+      href="javascript:void(0)"
+      (click)="onEdit.emit()"
+      >Add listing note</a
+    >
+  </div>
+  } @else {
+  <ng-container
+    *ngTemplateOutlet="
+      !editMode ? viewNoteTemplate : editNoteTemplate;
+      context: { note: listingNote, editMode: editMode }
+    "
+  >
+  </ng-container>
+  }
+
+  <ng-template #viewNoteTemplate let-note="note" let-editMode="editMode">
+    <div pdk-padding-vertical="2" class="view-note">
+      <h5 pdk-typography="heading-small" pdk-margin-bottom="0" pdk-margin-top="0">Listing note:</h5>
+      <pdk-foldable-text data-test-id="viewNote" lineClamp="1">
+        {{ note.note }}
+      </pdk-foldable-text>
+    </div>
+
+    <div class="note-form-actions">
+      <a
+        data-test-id="edit-note"
+        pdk-link
+        unvisited
+        href="javascript:void(0)"
+        (click)="onEdit.emit(); changeLabel()"
+        pdk-margin-right="3"
+        >Change</a
+      >
+      <a
+        data-test-id="delete-note"
+        pdk-link
+        unvisited
+        href="javascript:void(0)"
+        (click)="onDelete.emit()"
+        pdk-text-colour="red"
+        >Delete</a
+      >
+    </div>
+  </ng-template>
+
+  <ng-template #editNoteTemplate let-note="note" let-editMode="editMode">
+    <form
+      #form="ngForm"
+      pdk-form
+      (validSubmit)="submit()"
+      (errors)="onError.emit($event)"
+      data-test-id="noteForm"
+      novalidate
+    >
+      <pdk-form-field
+        [label]="listingNoteLabel"
+        labelType="small"
+        [errorMessages]="[{ rule: 'required', message: 'Enter a note' }]"
+        pdk-margin-bottom="0"
+      >
+        <textarea
+          pdk-resize
+          minRows="1"
+          maxRows="10"
+          pdk-input
+          pdk-text-input
+          name="note"
+          [ngModel]="note?.note"
+          required
+        ></textarea>
+      </pdk-form-field>
+      <div class="note-form-actions" pdk-margin-bottom="0">
+        <button
+          pdk-button
+          type="submit"
+          pdk-margin-right="3"
+          pdk-margin-bottom="0"
+          pdk-fill-colour="green"
+        >
+          Save
+        </button>
+        <a
+          data-test-id="cancel-edit-note"
+          pdk-link
+          unvisited
+          href="javascript:void(0)"
+          (click)="onCancel.emit()"
+          >Cancel</a
+        >
+      </div>
+    </form>
+  </ng-template>
+</ng-container>

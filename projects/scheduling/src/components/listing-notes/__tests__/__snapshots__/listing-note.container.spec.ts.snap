@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListingNoteContainerComponent #listingnote should dispatch updateListingNote action and display the status message when submitting note updates 1`] = `
+<listing-note-container
+  courtRoomId={[Function String]}
+  displayStatusMessage$={[Function _Store]}
+  editMode="false"
+  listingNoteDate={[Function String]}
+  onErrors={[Function EventEmitter_]}
+  showDeleteConfirmation$={[Function BehaviorSubject]}
+  store={[Function _MockStore]}
+>
+  <pdk-inset-text
+    class="govuk-inset-text govuk-!-margin-top-2 govuk-!-margin-bottom-0 govuk-!-padding-top-0"
+    pdk-margin-bottom="0"
+    pdk-margin-top="2"
+    pdk-padding-top="0"
+  >
+    <div
+      class="govuk-inset-text"
+    >
+      <listing-note>
+        <div>
+          <a
+            class="govuk-link govuk-link--no-visited-state"
+            data-test-id="create-note"
+            href="javascript:void(0)"
+            pdk-link=""
+            unvisited=""
+          >
+            Add listing note
+          </a>
+        </div>
+      </listing-note>
+    </div>
+  </pdk-inset-text>
+</listing-note-container>
+`;
+
+exports[`ListingNoteContainerComponent #listingnote should render listing note for provided date and courtroom id  1`] = `
+<listing-note-container
+  courtRoomId={[Function String]}
+  displayStatusMessage$={[Function _Store]}
+  editMode="false"
+  listingNoteDate={[Function String]}
+  onErrors={[Function EventEmitter_]}
+  showDeleteConfirmation$={[Function BehaviorSubject]}
+  store={[Function _MockStore]}
+>
+  <pdk-inset-text
+    class="govuk-inset-text govuk-!-margin-top-2 govuk-!-margin-bottom-0 govuk-!-padding-top-0"
+    pdk-margin-bottom="0"
+    pdk-margin-top="2"
+    pdk-padding-top="0"
+  >
+    <div
+      class="govuk-inset-text"
+    >
+      <listing-note>
+        <div>
+          <a
+            class="govuk-link govuk-link--no-visited-state"
+            data-test-id="create-note"
+            href="javascript:void(0)"
+            pdk-link=""
+            unvisited=""
+          >
+            Add listing note
+          </a>
+        </div>
+      </listing-note>
+    </div>
+  </pdk-inset-text>
+</listing-note-container>
+`;
+
+exports[`ListingNoteContainerComponent #listingnote should set editMode to false when oncancel event is fired 1`] = `
+<listing-note-container
+  courtRoomId={[Function String]}
+  displayStatusMessage$={[Function _Store]}
+  editMode="false"
+  listingNoteDate={[Function String]}
+  onErrors={[Function EventEmitter_]}
+  showDeleteConfirmation$={[Function BehaviorSubject]}
+  store={[Function _MockStore]}
+>
+  <pdk-inset-text
+    class="govuk-inset-text govuk-!-margin-top-2 govuk-!-margin-bottom-0 govuk-!-padding-top-0"
+    pdk-margin-bottom="0"
+    pdk-margin-top="2"
+    pdk-padding-top="0"
+  >
+    <div
+      class="govuk-inset-text"
+    >
+      <listing-note>
+        <div>
+          <a
+            class="govuk-link govuk-link--no-visited-state"
+            data-test-id="create-note"
+            href="javascript:void(0)"
+            pdk-link=""
+            unvisited=""
+          >
+            Add listing note
+          </a>
+        </div>
+      </listing-note>
+    </div>
+  </pdk-inset-text>
+</listing-note-container>
+`;
+
+exports[`ListingNoteContainerComponent #listingnote should set editMode to true when onEdit event is fired 1`] = `
+<listing-note-container
+  courtRoomId={[Function String]}
+  displayStatusMessage$={[Function _Store]}
+  editMode={[Function Boolean]}
+  listingNoteDate={[Function String]}
+  onErrors={[Function EventEmitter_]}
+  showDeleteConfirmation$={[Function BehaviorSubject]}
+  store={[Function _MockStore]}
+>
+  <pdk-inset-text
+    class="govuk-inset-text govuk-!-margin-top-2 govuk-!-margin-bottom-0 govuk-!-padding-top-0"
+    pdk-margin-bottom="0"
+    pdk-margin-top="2"
+    pdk-padding-top="0"
+  >
+    <div
+      class="govuk-inset-text"
+    >
+      <listing-note>
+        <form
+          class="ng-untouched ng-pristine ng-valid"
+          data-test-id="noteForm"
+          novalidate=""
+          pdk-form=""
+        >
+          <pdk-form-field
+            class="govuk-!-margin-bottom-0"
+            labeltype="small"
+            pdk-margin-bottom="0"
+          >
+            <pdk-form-group
+              class="pdk-form-group"
+            >
+              <label
+                class="govuk-label govuk-label--s"
+                for="pdk-form-control-1"
+              >
+                 Listing note 
+              </label>
+              <textarea
+                class="ng-untouched ng-pristine ng-valid govuk-input"
+                id="pdk-form-control-1"
+                maxrows="10"
+                minrows="1"
+                name="note"
+                pdk-input=""
+                pdk-resize=""
+                pdk-text-input=""
+                required=""
+                style="resize: none; height: -86px; min-height: 4px; max-height: -86px;"
+              />
+            </pdk-form-group>
+          </pdk-form-field>
+          <div
+            class="note-form-actions govuk-!-margin-bottom-0"
+            pdk-margin-bottom="0"
+          >
+            <button
+              class="pdk-!-fill-color-green govuk-!-margin-right-3 govuk-!-margin-bottom-0 govuk-button"
+              pdk-button=""
+              pdk-fill-colour="green"
+              pdk-margin-bottom="0"
+              pdk-margin-right="3"
+              type="submit"
+            >
+               Save 
+            </button>
+            <a
+              class="govuk-link govuk-link--no-visited-state"
+              data-test-id="cancel-edit-note"
+              href="javascript:void(0)"
+              pdk-link=""
+              unvisited=""
+            >
+              Cancel
+            </a>
+          </div>
+        </form>
+      </listing-note>
+    </div>
+  </pdk-inset-text>
+</listing-note-container>
+`;
+
+exports[`ListingNoteContainerComponent render the listing note container component 1`] = `
+<listing-note-container
+  displayStatusMessage$={[Function _Store]}
+  editMode="false"
+  onErrors={[Function EventEmitter_]}
+  showDeleteConfirmation$={[Function BehaviorSubject]}
+  store={[Function _MockStore]}
+>
+  <pdk-inset-text
+    class="govuk-inset-text govuk-!-margin-top-2 govuk-!-margin-bottom-0 govuk-!-padding-top-0"
+    pdk-margin-bottom="0"
+    pdk-margin-top="2"
+    pdk-padding-top="0"
+  >
+    <div
+      class="govuk-inset-text"
+    >
+      <listing-note>
+        <div>
+          <a
+            class="govuk-link govuk-link--no-visited-state"
+            data-test-id="create-note"
+            href="javascript:void(0)"
+            pdk-link=""
+            unvisited=""
+          >
+            Add listing note
+          </a>
+        </div>
+      </listing-note>
+    </div>
+  </pdk-inset-text>
+</listing-note-container>
+`;

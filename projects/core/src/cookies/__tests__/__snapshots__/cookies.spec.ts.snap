@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CookiesModule CookiesService should set all cookie preferences 1`] = `
+{
+  "realUserMonitoring": true,
+}
+`;
+
+exports[`CookiesModule CookiesService when no preferences have previously been set should get the default cookies preferences 1`] = `
+{
+  "realUserMonitoring": false,
+}
+`;
