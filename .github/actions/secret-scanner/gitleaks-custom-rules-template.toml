@@ -15,14 +15,6 @@ description = "Identify banned IDs"
 regex = '''${GITLEAKS_REGEX_BANNED_IDS}'''
 tags = ["banned-ids"]
 
-# ---------------------------------------------------------------------------
-# Reviewed and accepted values. Each entry is matched against a finding's
-# secret, so only these exact values are excluded - the rules above still
-# apply everywhere else.
-#   - "vnd.<service>.query.local" HTTP media types, which are content-type
-#     identifiers rather than hostnames (only the trailing ".local" matches)
-#   - user-id UUIDs used by the test fixtures under projects/testing
-# ---------------------------------------------------------------------------
 [allowlist]
 description = "Accepted values"
 regexes = [
