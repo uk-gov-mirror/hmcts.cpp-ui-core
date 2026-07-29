@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../dist/testing",
+    "target": "es2015",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "declaration": true,
+    "sourceMap": false,
+    "importHelpers": true,
+    "lib": ["es2018", "DOM"]
+  },
+  "include": ["src"],
+  "exclude": ["**/*.spec.ts"]
+}

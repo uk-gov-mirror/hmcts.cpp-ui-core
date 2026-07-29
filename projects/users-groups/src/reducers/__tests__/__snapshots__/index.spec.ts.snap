@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`usersGroupsReducer UsersGroupsActions.setGroupsWithOrganisation should set the groups with organisation 1`] = `
+{
+  "groupsWithOrganisation": [
+    {
+      "category": "speciality",
+      "description": "Transport for London",
+      "documentsReferenceDataGroup": "Probation Admin",
+      "groupId": "d231b119-d748-46da-89fc-293edf114e1",
+      "groupName": "SJP Prosecutors",
+      "organisationId": "6127a06c-c67b-4972-8b47-ba7b22c0eb10",
+      "resultsReferenceDataGroup": "Probation",
+      "roleIds": [],
+    },
+  ],
+  "permissionsMap": {},
+}
+`;
+
+exports[`usersGroupsReducer UsersGroupsActions.setUserDetails should set the user details 1`] = `
+{
+  "permissionsMap": {},
+  "userDetails": {
+    "email": "james@gray.org",
+    "firstName": "James",
+    "lastName": "Gray",
+    "prosecutingAuthorityAccess": "TFL",
+    "userId": "*",
+  },
+}
+`;
+
+exports[`usersGroupsReducer UsersGroupsActions.setUserDetails should set the user roles 1`] = `
+{
+  "permissionsMap": {},
+  "userRoles": [
+    {
+      "roleId": "test-user-role-id",
+    },
+  ],
+}
+`;
+
+exports[`usersGroupsReducer UsersGroupsActions.setUserOrganisations should set the organisations 1`] = `
+{
+  "organisations": [
+    {
+      "organisationId": "test-organisation-id",
+      "organisationName": "test-organisation-name",
+      "organisationType": "test-organisation-type",
+    },
+  ],
+  "permissionsMap": {},
+}
+`;
+
+exports[`usersGroupsReducer UsersGroupsActions.setUserPermissions should set user permissions 1`] = `
+{
+  "permissionsMap": {
+    "permission-id-1": {
+      "action": "test",
+      "description": "*",
+      "object": "permission",
+      "permissionId": "permission-id-1",
+      "target": "target-01",
+    },
+    "permission-id-2": {
+      "action": "test",
+      "description": "*",
+      "object": "permission",
+      "permissionId": "permission-id-2",
+      "target": "target-02",
+    },
+    "permission-id-3": {
+      "action": "test",
+      "description": "*",
+      "object": "permission",
+      "permissionId": "permission-id-3",
+    },
+  },
+  "switchableRoles": undefined,
+  "userGroups": [],
+}
+`;
+
+exports[`usersGroupsReducer UsersGroupsActions.setUserServices should set user services 1`] = `
+{
+  "permissionsMap": {},
+  "userServices": [
+    {
+      "containsSearch": true,
+      "features": [],
+      "name": "*",
+    },
+  ],
+}
+`;
+
+exports[`usersGroupsReducer selectors Permissions getAllUserRolePermissionIds should return permission ids for user 1`] = `
+[
+  "permission-id",
+]
+`;
+
+exports[`usersGroupsReducer selectors Permissions getUserRolePermissions should return aggregated permissions for user 1`] = `
+[
+  {
+    "action": "test",
+    "description": "*",
+    "object": "permission",
+  },
+]
+`;
+
+exports[`usersGroupsReducer selectors Permissions getUserRolePermissionsMap should return  permissions map from permissions 1`] = `
+{
+  "permission-id": {
+    "action": "test",
+    "description": "*",
+    "object": "permission",
+    "permissionId": "permission-id",
+  },
+}
+`;
+
+exports[`usersGroupsReducer selectors getAllUserPlacements should select the all the placements of all the roles 1`] = `
+[
+  {
+    "placementId": "test-role-1-placement-id-1",
+  },
+  {
+    "placementId": "test-role-1-placement-id-2",
+  },
+  {
+    "placementId": "test-role-2-placement-id-1",
+  },
+  {
+    "placementId": "test-role-2-placement-id-2",
+  },
+]
+`;
+
+exports[`usersGroupsReducer selectors getGroupsWithOrganisation should select the groups with organisation 1`] = `
+[
+  {
+    "category": "speciality",
+    "description": "Transport for London",
+    "documentsReferenceDataGroup": "Probation Admin",
+    "groupId": "d231b119-d748-46da-89fc-293edf114e1",
+    "groupName": "SJP Prosecutors",
+    "organisationId": "6127a06c-c67b-4972-8b47-ba7b22c0eb10",
+    "resultsReferenceDataGroup": "Probation",
+    "roleIds": [
+      "test-role-id",
+    ],
+  },
+]
+`;
+
+exports[`usersGroupsReducer selectors getUserDetails should select the user details 1`] = `
+{
+  "email": "james@gray.org",
+  "firstName": "James",
+  "lastName": "Gray",
+  "prosecutingAuthorityAccess": "TFL",
+  "userId": "*",
+}
+`;
+
+exports[`usersGroupsReducer selectors getUserOrganisations should select the organisations 1`] = `
+[
+  {
+    "organisationId": "test-organisation-id",
+    "organisationName": "test-organisation-name",
+    "organisationType": "test-organisation-type",
+  },
+]
+`;
+
+exports[`usersGroupsReducer selectors getUserRoles should select the user roles 1`] = `
+[
+  {
+    "description": "test-user-role-description",
+    "roleId": "test-user-role-id",
+  },
+]
+`;
+
+exports[`usersGroupsReducer selectors getUserServices should select the user services 1`] = `
+[
+  {
+    "containsSearch": true,
+    "features": [],
+    "name": "*",
+  },
+]
+`;
+
+exports[`usersGroupsReducer undefined action should return the default state 1`] = `
+{
+  "permissionsMap": {},
+}
+`;

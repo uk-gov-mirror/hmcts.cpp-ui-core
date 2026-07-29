@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AssignPrioritySelectComponent should render 1`] = `
+<assign-priority-select-test
+  ariaDescribedBy={[Function String]}
+  change={[Function Function]}
+  disabled="false"
+  fetchOptionsOnMount={[Function Boolean]}
+  id={[Function String]}
+  justified={[Function Boolean]}
+  name={[Function String]}
+  placeholder={[Function String]}
+  policeForceCode="undefined"
+  required="false"
+>
+  <assign-priority-select>
+    <pdk-select>
+       [] 
+    </pdk-select>
+  </assign-priority-select>
+</assign-priority-select-test>
+`;

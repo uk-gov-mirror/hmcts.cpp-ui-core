@@ -1,0 +1,19 @@
+{
+  "name": "@cpp/reference-data",
+  "version": "0.0.0-PLACEHOLDER",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/router": "^19.0.0",
+    "rxjs": "^7.0.0",
+    "uuid": "^3.3.2",
+    "@cpp/core": "^0.0.0-PLACEHOLDER",
+    "@cpp/users-groups": "^0.0.0-PLACEHOLDER",
+    "@cpp/pdk": "*",
+    "@ngrx/store": "^19.0.0"
+  },
+  "peerDepenciesComment": "Do not modify placeholders in this file"
+}

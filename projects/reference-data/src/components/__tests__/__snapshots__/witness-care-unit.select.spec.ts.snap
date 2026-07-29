@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WitnessCareUnitSelectComponent should render 1`] = `
+<witness-care-unit-select-test
+  ariaDescribedBy={[Function String]}
+  change={[Function Function]}
+  disabled="false"
+  fetchOptionsOnMount={[Function Boolean]}
+  id={[Function String]}
+  justified={[Function Boolean]}
+  name={[Function String]}
+  placeholder={[Function String]}
+  policeForceCode="undefined"
+  required="false"
+>
+  <witness-care-unit-select>
+    <pdk-select>
+       [] 
+    </pdk-select>
+  </witness-care-unit-select>
+</witness-care-unit-select-test>
+`;
+
+exports[`WitnessCareUnitSelectComponent when witnessCareUnits are present in the store  should clear previously rendered options if cps area code is changed to a falsy value 1`] = `
+<witness-care-unit-select-test
+  ariaDescribedBy={[Function String]}
+  change={[Function Function]}
+  disabled="false"
+  fetchOptionsOnMount={[Function Boolean]}
+  id={[Function String]}
+  justified={[Function Boolean]}
+  name={[Function String]}
+  placeholder={[Function String]}
+  policeForceCode="undefined"
+  required="false"
+>
+  <witness-care-unit-select>
+    <pdk-select>
+       [] 
+    </pdk-select>
+  </witness-care-unit-select>
+</witness-care-unit-select-test>
+`;
+
+exports[`WitnessCareUnitSelectComponent when witnessCareUnits are present in the store  should render options filtered by cps area code, and reset ngControl on the select input 1`] = `
+<witness-care-unit-select-test
+  ariaDescribedBy={[Function String]}
+  change={[Function Function]}
+  disabled="false"
+  fetchOptionsOnMount={[Function Boolean]}
+  id={[Function String]}
+  justified={[Function Boolean]}
+  name={[Function String]}
+  placeholder={[Function String]}
+  policeForceCode={[Function String]}
+  required="false"
+>
+  <witness-care-unit-select>
+    <pdk-select>
+       [
+    {
+      "value": "id2",
+      "label": "Bristol"
+    }
+  ] 
+    </pdk-select>
+  </witness-care-unit-select>
+</witness-care-unit-select-test>
+`;

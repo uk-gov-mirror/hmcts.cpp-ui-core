@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookingTypesSelectComponent should render 1`] = `
+<booking-types-select-test
+  ariaDescribedBy={[Function String]}
+  change={[Function Function]}
+  disabled="false"
+  fetchOptionsOnMount={[Function Boolean]}
+  id={[Function String]}
+  justified={[Function Boolean]}
+  name={[Function String]}
+  placeholder={[Function String]}
+  policeForceCode="undefined"
+  required="false"
+>
+  <booking-types-select>
+    <pdk-select>
+       [] 
+    </pdk-select>
+  </booking-types-select>
+</booking-types-select-test>
+`;

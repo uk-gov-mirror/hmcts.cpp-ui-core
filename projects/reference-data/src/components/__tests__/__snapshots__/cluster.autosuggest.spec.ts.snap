@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClusterAutosuggestComponent should render 1`] = `
+<cpp-cluster-autosuggest-test
+  ariaDescribedBy={[Function String]}
+  ariaLabel={[Function String]}
+  ariaLabelledBy={[Function String]}
+  fetchOptionsOnMount={[Function Boolean]}
+  hasError="false"
+  highlightFirstSuggestion="false"
+  highlightMatchedText="false"
+  id={[Function String]}
+  inputText={[Function Function]}
+  inputWidth={[Function Number]}
+  maxResults={[Function Number]}
+  search="false"
+>
+  <cpp-cluster-autosuggest>
+    <pdk-autosuggest-lite />
+  </cpp-cluster-autosuggest>
+</cpp-cluster-autosuggest-test>
+`;
+
+exports[`ClusterAutosuggestComponent when clusters are read locally should filter clusters found in the store 1`] = `
+<cpp-cluster-autosuggest-test
+  ariaDescribedBy={[Function String]}
+  ariaLabel={[Function String]}
+  ariaLabelledBy={[Function String]}
+  fetchOptionsOnMount={[Function Boolean]}
+  hasError="false"
+  highlightFirstSuggestion="false"
+  highlightMatchedText="false"
+  id={[Function String]}
+  inputText={[Function Function]}
+  inputWidth={[Function Number]}
+  maxResults={[Function Number]}
+  search="false"
+>
+  <cpp-cluster-autosuggest>
+    <pdk-autosuggest-lite />
+  </cpp-cluster-autosuggest>
+</cpp-cluster-autosuggest-test>
+`;

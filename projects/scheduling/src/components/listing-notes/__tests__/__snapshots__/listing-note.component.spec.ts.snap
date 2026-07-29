@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListingNoteComponent Existing note should be displayed as foldable note 1`] = `
+<listing-note
+  editMode="false"
+  element={[Function ElementRef]}
+  form="undefined"
+  listingNote={[Function Object]}
+  listingNoteLabel={[Function String]}
+  onCancel={[Function EventEmitter_]}
+  onClearBanner={[Function EventEmitter_]}
+  onDelete={[Function EventEmitter_]}
+  onEdit={[Function EventEmitter_]}
+  onError={[Function EventEmitter_]}
+  onSubmit={[Function EventEmitter_]}
+>
+  <div
+    class="view-note govuk-!-padding-top-2 govuk-!-padding-bottom-2"
+    pdk-padding-vertical="2"
+  >
+    <h5
+      class="govuk-!-margin-bottom-0 govuk-!-margin-top-0 govuk-heading-s"
+      pdk-margin-bottom="0"
+      pdk-margin-top="0"
+      pdk-typography="heading-small"
+    >
+      Listing note:
+    </h5>
+    <pdk-foldable-text
+      data-test-id="viewNote"
+      lineclamp="1"
+    >
+      <div
+        class="pdk-foldable"
+      >
+        <span
+          class="pdk-foldable__content pdk-foldable__content__single"
+          id="pdk-foldable-text-3"
+        >
+          Lorem ipsum dolor sit amet, usu ne tota vivendo ullamcorper,
+          est ut quem minim omnium. Odio vero interpretaris ex duo,
+          iudico cetero vidisse has ex, ea has aeterno sententiae.
+          Consul primis liberavisse per ex, quaeque graecis per ut.
+        </span>
+      </div>
+    </pdk-foldable-text>
+  </div><div
+    class="note-form-actions"
+  >
+    <a
+      class="govuk-!-margin-right-3 govuk-link govuk-link--no-visited-state"
+      data-test-id="edit-note"
+      href="javascript:void(0)"
+      pdk-link=""
+      pdk-margin-right="3"
+      unvisited=""
+    >
+      Change
+    </a>
+    <a
+      class="pdk-!-text-color-red govuk-link govuk-link--no-visited-state"
+      data-test-id="delete-note"
+      href="javascript:void(0)"
+      pdk-link=""
+      pdk-text-colour="red"
+      unvisited=""
+    >
+      Delete
+    </a>
+  </div>
+</listing-note>
+`;
+
+exports[`ListingNoteComponent Existing note should be displayed in text area when in editmode 1`] = `
+<listing-note
+  editMode={[Function Boolean]}
+  element={[Function ElementRef]}
+  form={[Function _NgForm]}
+  listingNote={[Function Object]}
+  listingNoteLabel={[Function String]}
+  onCancel={[Function EventEmitter_]}
+  onClearBanner={[Function EventEmitter_]}
+  onDelete={[Function EventEmitter_]}
+  onEdit={[Function EventEmitter_]}
+  onError={[Function EventEmitter_]}
+  onSubmit={[Function EventEmitter_]}
+>
+  <form
+    class="ng-untouched ng-pristine ng-valid"
+    data-test-id="noteForm"
+    novalidate=""
+    pdk-form=""
+  >
+    <pdk-form-field
+      class="govuk-!-margin-bottom-0"
+      labeltype="small"
+      pdk-margin-bottom="0"
+    >
+      <pdk-form-group
+        class="pdk-form-group"
+      >
+        <label
+          class="govuk-label govuk-label--s"
+          for="pdk-form-control-4"
+        >
+           Listing note 
+        </label>
+        <textarea
+          class="ng-untouched ng-pristine ng-valid govuk-input"
+          id="pdk-form-control-4"
+          maxrows="10"
+          minrows="1"
+          name="note"
+          pdk-input=""
+          pdk-resize=""
+          pdk-text-input=""
+          required=""
+          style="resize: none; height: -86px; min-height: 4px; max-height: -86px;"
+        />
+      </pdk-form-group>
+    </pdk-form-field>
+    <div
+      class="note-form-actions govuk-!-margin-bottom-0"
+      pdk-margin-bottom="0"
+    >
+      <button
+        class="pdk-!-fill-color-green govuk-!-margin-right-3 govuk-!-margin-bottom-0 govuk-button"
+        pdk-button=""
+        pdk-fill-colour="green"
+        pdk-margin-bottom="0"
+        pdk-margin-right="3"
+        type="submit"
+      >
+         Save 
+      </button>
+      <a
+        class="govuk-link govuk-link--no-visited-state"
+        data-test-id="cancel-edit-note"
+        href="javascript:void(0)"
+        pdk-link=""
+        unvisited=""
+      >
+        Cancel
+      </a>
+    </div>
+  </form>
+</listing-note>
+`;
+
+exports[`ListingNoteComponent should create listing note when in editmode without an existing note 1`] = `
+<listing-note
+  editMode={[Function Boolean]}
+  element={[Function ElementRef]}
+  form={[Function _NgForm]}
+  listingNoteLabel={[Function String]}
+  onCancel={[Function EventEmitter_]}
+  onClearBanner={[Function EventEmitter_]}
+  onDelete={[Function EventEmitter_]}
+  onEdit={[Function EventEmitter_]}
+  onError={[Function EventEmitter_]}
+  onSubmit={[Function EventEmitter_]}
+>
+  <form
+    class="ng-untouched ng-pristine ng-valid"
+    data-test-id="noteForm"
+    novalidate=""
+    pdk-form=""
+  >
+    <pdk-form-field
+      class="govuk-!-margin-bottom-0"
+      labeltype="small"
+      pdk-margin-bottom="0"
+    >
+      <pdk-form-group
+        class="pdk-form-group"
+      >
+        <label
+          class="govuk-label govuk-label--s"
+          for="pdk-form-control-1"
+        >
+           Listing note 
+        </label>
+        <textarea
+          class="ng-untouched ng-pristine ng-valid govuk-input"
+          id="pdk-form-control-1"
+          maxrows="10"
+          minrows="1"
+          name="note"
+          pdk-input=""
+          pdk-resize=""
+          pdk-text-input=""
+          required=""
+          style="resize: none; height: -86px; min-height: 4px; max-height: -86px;"
+        />
+      </pdk-form-group>
+    </pdk-form-field>
+    <div
+      class="note-form-actions govuk-!-margin-bottom-0"
+      pdk-margin-bottom="0"
+    >
+      <button
+        class="pdk-!-fill-color-green govuk-!-margin-right-3 govuk-!-margin-bottom-0 govuk-button"
+        pdk-button=""
+        pdk-fill-colour="green"
+        pdk-margin-bottom="0"
+        pdk-margin-right="3"
+        type="submit"
+      >
+         Save 
+      </button>
+      <a
+        class="govuk-link govuk-link--no-visited-state"
+        data-test-id="cancel-edit-note"
+        href="javascript:void(0)"
+        pdk-link=""
+        unvisited=""
+      >
+        Cancel
+      </a>
+    </div>
+  </form>
+</listing-note>
+`;
+
+exports[`ListingNoteComponent should render a create listing note link 1`] = `
+<listing-note
+  editMode="false"
+  element={[Function ElementRef]}
+  form="undefined"
+  listingNoteLabel={[Function String]}
+  onCancel={[Function EventEmitter_]}
+  onClearBanner={[Function EventEmitter_]}
+  onDelete={[Function EventEmitter_]}
+  onEdit={[Function EventEmitter_]}
+  onError={[Function EventEmitter_]}
+  onSubmit={[Function EventEmitter_]}
+>
+  <div>
+    <a
+      class="govuk-link govuk-link--no-visited-state"
+      data-test-id="create-note"
+      href="javascript:void(0)"
+      pdk-link=""
+      unvisited=""
+    >
+      Add listing note
+    </a>
+  </div>
+</listing-note>
+`;

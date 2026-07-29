@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CPSBusinessUnitSelectComponent should render 1`] = `
+<cpp-business-unit-select-test
+  ariaDescribedBy={[Function String]}
+  change={[Function Function]}
+  cmsAreaCode="undefined"
+  disabled="false"
+  fetchOptionsOnMount={[Function Boolean]}
+  id={[Function String]}
+  justified={[Function Boolean]}
+  name={[Function String]}
+  placeholder={[Function String]}
+  required="false"
+>
+  <cps-business-unit-select>
+    <pdk-select>
+       [] 
+    </pdk-select>
+  </cps-business-unit-select>
+</cpp-business-unit-select-test>
+`;
+
+exports[`CPSBusinessUnitSelectComponent when cps business types are present in the store  should clear previously rendered options if cps area code is changed to a falsy value 1`] = `
+<cpp-business-unit-select-test
+  ariaDescribedBy={[Function String]}
+  change={[Function Function]}
+  cmsAreaCode="undefined"
+  disabled="false"
+  fetchOptionsOnMount={[Function Boolean]}
+  id={[Function String]}
+  justified={[Function Boolean]}
+  name={[Function String]}
+  placeholder={[Function String]}
+  required="false"
+>
+  <cps-business-unit-select>
+    <pdk-select>
+       [] 
+    </pdk-select>
+  </cps-business-unit-select>
+</cpp-business-unit-select-test>
+`;
+
+exports[`CPSBusinessUnitSelectComponent when cps business types are present in the store  should render options filtered by cps area code, and reset ngControl on the select input 1`] = `
+<cpp-business-unit-select-test
+  ariaDescribedBy={[Function String]}
+  change={[Function Function]}
+  cmsAreaCode={[Function String]}
+  disabled="false"
+  fetchOptionsOnMount={[Function Boolean]}
+  id={[Function String]}
+  justified={[Function Boolean]}
+  name={[Function String]}
+  placeholder={[Function String]}
+  required="false"
+>
+  <cps-business-unit-select>
+    <pdk-select>
+       [
+    {
+      "value": "1",
+      "label": "Unit 1"
+    },
+    {
+      "value": "2",
+      "label": "Unit 2"
+    }
+  ] 
+    </pdk-select>
+  </cps-business-unit-select>
+</cpp-business-unit-select-test>
+`;

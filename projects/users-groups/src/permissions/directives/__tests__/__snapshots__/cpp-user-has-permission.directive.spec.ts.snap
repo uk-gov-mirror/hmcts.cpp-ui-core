@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  and source attribute is provided,  when user does not have source attribute access in existing permissions, it should not render view 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Object]}
+  providedSource={[Function String]}
+  providedTarget="undefined"
+>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  and source attribute is provided,  when user has source attribute access in existing permissions, it should render view 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Object]}
+  providedSource={[Function String]}
+  providedTarget={[Function String]}
+>
+  <div>
+     This is displayed ONLY if user has the specified SOURCE attribute as part of expected user permission. 
+  </div>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  and target attribute is provided,  when user does not have target attribute access in existing permissions, it should not render view 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Object]}
+  providedSource="undefined"
+  providedTarget={[Function String]}
+>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  and target attribute is provided,  when user has target attribute access in existing permissions, it should render view 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Object]}
+  providedSource="undefined"
+  providedTarget={[Function String]}
+>
+  <div>
+     This is displayed ONLY if user has the specified target attribute as part of expected user permission. 
+  </div>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  should not render expected view if cpp User does not have permissions 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Object]}
+  providedSource="undefined"
+  providedTarget="undefined"
+>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  should render expected view if cpp User has permissions 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Object]}
+  providedSource="undefined"
+  providedTarget="undefined"
+>
+  <div>
+     This is displayed ONLY if user has permissions. 
+  </div>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  when user is required not to have expected permissions,  it should render view 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Object]}
+  providedSource={[Function String]}
+  providedTarget={[Function String]}
+>
+  <div>
+     This is displayed ONLY if user is REQUIRED NOT TO HAVE expected user permission. 
+  </div>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  when user is required to have expected permissions,  it should render view 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Object]}
+  providedSource={[Function String]}
+  providedTarget={[Function String]}
+>
+  <div>
+     This is displayed ONLY if user is REQUIRED to have expected user permission. 
+  </div>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective Given *cppUserHasPermission is used,  when user is required to have some of the permissions,  it should render view 1`] = `
+<cpp-user-has-permissions-test
+  expectedPermission={[Function Array]}
+  providedSource="undefined"
+  providedTarget="undefined"
+>
+  <div>
+     This is displayed ONLY if user is has SOME of the expected user permissions. 
+  </div>
+</cpp-user-has-permissions-test>
+`;
+
+exports[`CppUserHasPermissionDirective should render 1`] = `
+<cpp-user-has-permissions-test>
+  <div>
+    This is displayed without directive.
+  </div>
+</cpp-user-has-permissions-test>
+`;

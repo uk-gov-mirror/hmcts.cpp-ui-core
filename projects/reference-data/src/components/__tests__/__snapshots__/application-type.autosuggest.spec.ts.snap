@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationTypeAutosuggestComponent should render 1`] = `
+<cpp-application-type-autosuggest-test
+  ariaDescribedBy={[Function String]}
+  ariaLabel={[Function String]}
+  ariaLabelledBy={[Function String]}
+  debounceTime={[Function Number]}
+  fetchOptionsOnMount={[Function Boolean]}
+  hasError="false"
+  highlightFirstSuggestion="false"
+  highlightMatchedText="false"
+  id={[Function String]}
+  inputText={[Function Function]}
+  inputWidth={[Function Number]}
+  maxResults={[Function Number]}
+  search="false"
+>
+  <cpp-application-type-autosuggest>
+    <pdk-autosuggest-lite />
+  </cpp-application-type-autosuggest>
+</cpp-application-type-autosuggest-test>
+`;
+
+exports[`ApplicationTypeAutosuggestComponent when application types are read locally should filter application types found in the store 1`] = `
+<cpp-application-type-autosuggest-test
+  ariaDescribedBy={[Function String]}
+  ariaLabel={[Function String]}
+  ariaLabelledBy={[Function String]}
+  debounceTime={[Function Number]}
+  fetchOptionsOnMount={[Function Boolean]}
+  hasError="false"
+  highlightFirstSuggestion="false"
+  highlightMatchedText="false"
+  id={[Function String]}
+  inputText={[Function Function]}
+  inputWidth={[Function Number]}
+  maxResults={[Function Number]}
+  search="false"
+>
+  <cpp-application-type-autosuggest>
+    <pdk-autosuggest-lite />
+  </cpp-application-type-autosuggest>
+</cpp-application-type-autosuggest-test>
+`;

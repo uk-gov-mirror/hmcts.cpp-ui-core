@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HearingSlotsRowComponent should render 1`] = `
+<tr
+  errors={[Function EventEmitter_]}
+  hearingSlot={[Function Function]}
+  rotaBusinessTypesByCode={[Function Object]}
+  selectedHearingSlotTimestamp={[Function EventEmitter_]}
+  selectedHearingSlotTimestamps={[Function Function]}
+  selectedTimestampModel={[Function Function]}
+  selectionMode={[Function String]}
+>
+  <td
+    class="govuk-table__cell"
+    data-test-id="sessionDate"
+    pdk-table-cell=""
+  >
+     25-03-2025
+  </td><td
+    class="govuk-table__cell"
+    colspan="4"
+    pdk-table-cell=""
+  >
+    <table
+      class="govuk-table"
+      pdk-table=""
+    >
+      <tr
+        class="govuk-table__row"
+        pdk-table-row=""
+      >
+        <td
+          class="width-180-px govuk-!-padding-top-0 govuk-table__cell"
+          pdk-padding-top="0"
+          pdk-table-cell=""
+        >
+          <span
+            data-test-id="courtHouseName"
+          >
+          </span>
+          <br />
+          <span
+            class="pdk-!-text-color-dark-grey"
+            data-test-id="courtroomName"
+            pdk-text-colour="dark-grey"
+          >
+          </span>
+        </td>
+        <td
+          class="width-130-px govuk-!-padding-top-0 govuk-table__cell"
+          data-test-id="businessType"
+          pdk-padding-top="0"
+          pdk-table-cell=""
+        >
+          <abbr>
+          </abbr>
+        </td>
+        <td
+          class="width-210-px govuk-!-padding-top-0 govuk-table__cell"
+          data-test-id="courtSession"
+          pdk-padding-top="0"
+          pdk-table-cell=""
+        >
+          <span>
+            AM
+          </span>
+        </td>
+        <td
+          class="width-100-px govuk-!-padding-top-0 govuk-table__cell"
+          data-test-id="units"
+          pdk-padding-top="0"
+          pdk-table-cell=""
+        >
+          <ol
+            class="govuk-!-margin-bottom-0 govuk-list"
+            pdk-list=""
+            pdk-margin-bottom="0"
+          >
+            <li>
+              0
+            </li>
+          </ol>
+        </td>
+      </tr>
+    </table>
+  </td><td
+    class="govuk-table__cell"
+    data-test-id="booked"
+    pdk-table-cell=""
+  >
+    <ol
+      class="govuk-!-margin-bottom-0 govuk-list"
+      pdk-list=""
+      pdk-margin-bottom="0"
+    >
+      <li>
+      </li>
+    </ol>
+  </td>
+</tr>
+`;

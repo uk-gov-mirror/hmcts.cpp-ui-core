@@ -1,0 +1,32 @@
+table {
+  table-layout: fixed;
+}
+th {
+  vertical-align: bottom;
+}
+td {
+  vertical-align: top;
+}
+td > table td {
+  border-bottom: 0;
+}
+.width-100-px {
+  width: 100px;
+}
+
+.width-130-px {
+  width: 130px;
+}
+
+.width-180-px {
+  width: 180px;
+}
+
+.width-210-px {
+  width: 210px;
+}
+
+:host ::ng-deep label.govuk-label.govuk-checkboxes__label,
+:host ::ng-deep label.govuk-radios__label.govuk-label {
+  display: contents;
+}

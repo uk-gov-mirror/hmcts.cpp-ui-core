@@ -1,0 +1,47 @@
+.note-form-actions {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+}
+.view-note {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+}
+
+.view-note {
+  pdk-foldable-text {
+    min-width: 0;
+    align-self: stretch;
+    .pdk-foldable {
+      display: flex;
+      align-items: flex-end;
+    }
+    .pdk-foldable--expanded {
+      .pdk-foldable__content {
+        white-space: pre-wrap !important;
+      }
+    }
+  }
+}
+
+pdk-context-panel > div {
+  display: flex !important;
+  padding: 10px !important;
+  margin-bottom: 10px;
+}
+.pdk-context-panel__icon--tick {
+  height: 20px !important;
+  width: 20px !important;
+  background-size: contain;
+  background-repeat: repeat;
+  margin-top: 2px;
+}
+.govuk-body-l {
+  font-weight: 600;
+  font-size: 21px;
+}
+.govuk-inset-text {
+  padding-left: 10px;
+  padding-top: 5px !important;
+}

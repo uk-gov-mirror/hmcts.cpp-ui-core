@@ -1,0 +1,23 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "projects/scheduling/tsconfig.lib.json",
+          "projects/scheduling/tsconfig.spec.json"
+        ]
+      },
+      "rules": {
+        "@angular-eslint/no-output-on-prefix": "off",
+        "@angular-eslint/no-input-rename": "off"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "rules": {}
+    }
+  ]
+}

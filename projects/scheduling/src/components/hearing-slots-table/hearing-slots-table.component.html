@@ -1,0 +1,32 @@
+<table data-test-id="hearingSlots" pdk-table pdk-margin-bottom="3">
+  <thead pdk-table-head>
+    <tr pdk-table-row>
+      @if (selectionMode !== 'readonly') {
+      <th pdk-table-header style="width: 40px">
+        <span pdk-visually-hidden>Action</span>
+      </th>
+      }
+      <th pdk-table-header style="width: 100px">Date</th>
+      <th pdk-table-header style="width: 180px">Court Details</th>
+      <th pdk-table-header style="width: 130px">Business</th>
+      <th pdk-table-header style="width: 210px">Session</th>
+      <th pdk-table-header style="width: 100px">Time/slots remaining</th>
+      <th pdk-table-header style="width: 210px">Booked</th>
+    </tr>
+  </thead>
+  <tbody pdk-table-body>
+    @for (hearingSlot of hearingSlots; track hearingSlot.courtScheduleId) {
+    <tr
+      hearing-slots-row
+      pdk-table-row
+      data-test-id="hearingSlot"
+      [selectionMode]="selectionMode"
+      [hearingSlot]="hearingSlot"
+      [rotaBusinessTypesByCode]="rotaBusinessTypesByCode"
+      [selectedHearingSlotTimestamps]="selectedHearingSlotTimestamps"
+      (selectedHearingSlotTimestamp)="handleHearingSlotTimeChanged($event)"
+      (errors)="errors.emit($event)"
+    ></tr>
+    }
+  </tbody>
+</table>
