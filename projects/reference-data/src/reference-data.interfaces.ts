@@ -364,8 +364,6 @@ export enum RotaBusinessTypeCode {
   trial = 'TRI'
 }
 
-export type RotaBusinessTypeJurisdiction = 'MAGISTRATES' | 'CROWN';
-
 export interface RotaBusinessType {
   id: string;
   seqNum: number;
