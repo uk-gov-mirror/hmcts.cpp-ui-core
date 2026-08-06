@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams, provideHttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { concat, merge, Observable } from 'rxjs';
+import { concat, merge, Observable, throwError } from 'rxjs';
 import { marbles } from 'rxjs-marbles/jest';
 import { finalize, take, takeUntil } from 'rxjs/operators';
 import { NotificationDispatcher, NotificationEvent } from '../dispatcher';
@@ -161,7 +161,7 @@ describe('HttpModule', () => {
       it(
         'performs a post request using the provided options',
         marbles((m) => {
-          expect.assertions(5);
+          expect.assertions(6);
 
           const response$ = m.cold('-(a|)');
           const headers = new HttpHeaders({ name: '*' });
@@ -182,13 +182,28 @@ describe('HttpModule', () => {
                 expect(url).toEqual('/command');
                 expect(requestType).toEqual('command.json');
                 expect(body).toEqual('*');
-                expect(options.headers).toEqual(headers);
+                expect(options.headers.get('name')).toEqual('*');
+                expect(options.headers.get('CPPCLIENTCORRELATIONID')).toEqual('CORRELATION_ID');
               })
             );
 
           m.expect(command$).toBeObservable(response$);
         })
       );
+
+      it('keeps a caller-supplied correlation id instead of generating a new one', () => {
+        post.mockReturnValue(new Observable());
+
+        http
+          .command({
+            url: '/command',
+            requestType: 'command.json',
+            headers: new HttpHeaders({ CPPCLIENTCORRELATIONID: 'SUPPLIED' })
+          })
+          .subscribe();
+
+        expect(post.mock.calls[0][3].headers.get('CPPCLIENTCORRELATIONID')).toEqual('SUPPLIED');
+      });
     });
 
     describe('#commandSync', () => {
@@ -263,6 +278,7 @@ describe('HttpModule', () => {
           };
           const error = {
             status: -1,
+            clientCorrelationId: 'CORRELATION_ID',
             originalEvent: errorEvent,
             data: { message: '*' }
           };
@@ -294,6 +310,7 @@ describe('HttpModule', () => {
           };
           const error = {
             status: -1,
+            clientCorrelationId: 'CORRELATION_ID',
             originalEvent: errorEvent,
             data: { message: '*' }
           };
@@ -320,7 +337,10 @@ describe('HttpModule', () => {
         marbles((m) => {
           const response$ = m.cold('-a|  ');
           const incoming$ = m.cold(' ----');
-          const expected$ = m.cold('10s #', undefined, { status: 0 });
+          const expected$ = m.cold('10s #', undefined, {
+            status: 0,
+            clientCorrelationId: 'CORRELATION_ID'
+          });
 
           command.mockReturnValue(response$);
           getEvents.mockReturnValueOnce(incoming$);
@@ -342,7 +362,7 @@ describe('HttpModule', () => {
       it(
         'performs a get request using the provided options',
         marbles((m) => {
-          expect.assertions(4);
+          expect.assertions(5);
 
           const response$ = m.cold('-(a|)');
           const headers = new HttpHeaders({ name: '*' });
@@ -361,13 +381,35 @@ describe('HttpModule', () => {
 
                 expect(url).toEqual('/query');
                 expect(requestType).toEqual('query.json');
-                expect(options.headers).toEqual(headers);
+                expect(options.headers.get('name')).toEqual('*');
+                expect(options.headers.get('CPPCLIENTCORRELATIONID')).toEqual('CORRELATION_ID');
               })
             );
 
           m.expect(query).toBeObservable(response$);
         })
       );
+
+      it('generates a correlation id header when none is provided', () => {
+        get.mockReturnValue(new Observable());
+
+        http.query({ url: '/query', requestType: 'query.json' }).subscribe();
+
+        expect(get.mock.calls[0][2].headers.get('CPPCLIENTCORRELATIONID')).toEqual(
+          'CORRELATION_ID'
+        );
+      });
+
+      it('tags errors with the correlation id of the failed call', () => {
+        get.mockReturnValue(throwError({ status: 500 }));
+
+        let caught: any;
+        http.query({ url: '/query', requestType: 'query.json' }).subscribe({
+          error: (error) => (caught = error)
+        });
+
+        expect(caught).toEqual({ status: 500, clientCorrelationId: 'CORRELATION_ID' });
+      });
     });
   });
 

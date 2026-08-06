@@ -1,7 +1,7 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { merge, Observable, race, throwError, timer } from 'rxjs';
-import { filter, map, share, switchMap, take } from 'rxjs/operators';
+import { catchError, filter, map, share, switchMap, take } from 'rxjs/operators';
 import { NotificationDispatcher, NotificationEvent } from './dispatcher';
 import { CppHttpBackend, GetRequestOptions, PostRequestOptions } from './http-backend';
 import { GenerateUniqueKeyFn, GENERATE_UNIQUE_KEY } from './util';
@@ -49,6 +49,7 @@ export type HttpCommandSyncOptions = JsonCommandSyncOptions | PostCommandSyncOpt
 
 export interface CommandError<T extends Record<string, unknown> = Record<string, unknown>> {
   status: -1;
+  clientCorrelationId: string;
   originalEvent: NotificationEvent<T>;
   data: T;
 }
@@ -62,11 +63,19 @@ export class CppHttp {
   ) {}
 
   query<R>({ url, requestType, ...options }: HttpQueryOptions): Observable<R> {
-    return this.http.get<R>(url, requestType, options);
+    const clientCorrelationId = this.setCorrelationId(options);
+
+    return this.http
+      .get<R>(url, requestType, options)
+      .pipe(catchError((error) => throwError(this.tagError(error, clientCorrelationId))));
   }
 
   command({ url, requestType, body, ...options }: HttpComandOptions): Observable<any> {
-    return this.http.post(url, requestType, body, options);
+    const clientCorrelationId = this.setCorrelationId(options);
+
+    return this.http
+      .post(url, requestType, body, options)
+      .pipe(catchError((error) => throwError(this.tagError(error, clientCorrelationId))));
   }
 
   commandSync<R extends object = Record<string, unknown>>({
@@ -82,7 +91,7 @@ export class CppHttp {
     options.headers = options.headers.set(CORRELATION_KEY, clientCorrelationId);
 
     return merge(
-      timer(timeout || 30000).pipe(switchMap(() => throwError({ status: 0 }))),
+      timer(timeout || 30000).pipe(switchMap(() => throwError({ status: 0, clientCorrelationId }))),
       this.command(options).pipe(
         switchMap(() => {
           const events$ = this.notificationDispatcher
@@ -101,6 +110,7 @@ export class CppHttp {
               const { _metadata, ...data } = event;
 
               return throwError({
+                clientCorrelationId,
                 data,
                 originalEvent: event,
                 status: -1
@@ -112,5 +122,22 @@ export class CppHttp {
         })
       )
     ).pipe(take(1));
+  }
+
+  // fill-if-absent: commandSync (or any caller supplying its own id) must keep
+  // the id it races the notification events on
+  private setCorrelationId(options: { headers?: HttpHeaders }): string {
+    options.headers = options.headers || new HttpHeaders();
+    if (!options.headers.has(CORRELATION_KEY)) {
+      options.headers = options.headers.set(CORRELATION_KEY, this.generateUniqueKey());
+    }
+    return options.headers.get(CORRELATION_KEY) as string;
+  }
+
+  private tagError(error: unknown, clientCorrelationId: string): unknown {
+    if (error && typeof error === 'object' && !('clientCorrelationId' in error)) {
+      (error as Record<string, unknown>).clientCorrelationId = clientCorrelationId;
+    }
+    return error;
   }
 }
